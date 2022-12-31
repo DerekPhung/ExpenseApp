@@ -19,7 +19,7 @@ function addExpense() {
             <td>${date.value}</td>
             <td>$${amount.value}</td>
         </tr>
-    `
+    `;
 }
 
 function removeExpense(){
