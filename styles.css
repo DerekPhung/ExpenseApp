@@ -1,0 +1,14 @@
+html {
+    background: #333;
+    color: white;
+}
+#outsideBox{
+    border: 3px solid white;
+    height: 900px;
+    width: 900px;
+    margin: auto;
+    padding: 1rem;
+}
+table, th, td{
+    border: 2px solid white;
+}
