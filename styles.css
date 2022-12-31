@@ -2,6 +2,7 @@ html {
     background: #333;
     color: white;
 }
+
 #outsideBox{
     border: 3px solid white;
     height: 900px;
@@ -9,6 +10,16 @@ html {
     margin: auto;
     padding: 1rem;
 }
+
 table, th, td{
     border: 2px solid white;
+}
+
+#total{
+    position: absolute;
+    right: 300px; bottom: 350px;
+    width: 150px;
+    height:40px;
+    padding: 1px;
+    text-align: center;
 }
