@@ -5,11 +5,13 @@ function thePage(){
     <input id="date" type="date"/>
     $<input id="amount" type="number" min="0.01" placeholder="Amount"/>
     <button onclick="addExpense()">Add Expense</button>
+    
     <table id="IDK">
         <tr>
-            <th>Item:</th>
-            <th>Date:</th>
-            <th>Amount:</th>
+            <th>Item</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Action</th>
         </tr>
     </table>
 
@@ -19,11 +21,12 @@ function thePage(){
         </tr>
     </table>
     
-    <button onclick="removeExpense()">Remove</button>
+    <button onclick="removeExpense()">Remove All</button>
 `;
 }
 
-let totalAmount = 0;
+let totalAmount = 0.00;
+// let ID = 1;
 
 function addExpense() {
     document.getElementById("IDK").innerHTML += `
@@ -31,17 +34,28 @@ function addExpense() {
             <td>${item.value}</td>
             <td>${date.value}</td>
             <td>$${document.getElementById("amount").value}</td>
+            <td>
+                <button onclick="removeOneExpense(this)">Remove</button></td>
         </tr>
     `;
-
+    // ID++;
+   
     totalAmount = totalAmount + parseFloat(amount.value);
     // let storage = parseFloat(amount.value);
+    // console.log(totalAmount);
 
 document.getElementById("total").innerHTML = `
     <tr>
-        <td>Total Amount:$${totalAmount}</td>
+        <td>Total Amount:$${totalAmount.toFixed(2)}</td>
     </tr>
 `
+}
+
+function removeOneExpense(element){
+    var i = element.parentNode.parentNode.rowIndex;
+    console.log(i);
+    console.log(document.getElementById("IDK"));
+    document.getElementById("IDK").deleteRow(i);
 }
 
 function removeExpense(){
@@ -54,5 +68,6 @@ function removeExpense(){
     //     </tr>
     // </table>`;
     totalAmount = 0;
+    // ID = 1;
     thePage();
 }
